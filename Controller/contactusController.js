@@ -1,12 +1,12 @@
 const contactusService = require ('../Services/contactusService');
 
 async function createcontactus(req, res) {
-    const Contact_us = req.body;
+    const contact = req.body;
 
-    const createdcontactus = await contactusService.createcontactus(Contact_us);
+    const createdcontactus = await contactusService.createcontactus(contact);
     res.status(201).json(createdcontactus);
 };
 
-module.exports= {
+module.exports = {
     createcontactus,
 };
