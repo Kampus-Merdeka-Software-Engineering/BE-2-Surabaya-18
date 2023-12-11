@@ -1,9 +1,9 @@
 const contactusService = require ('../Services/contactusService');
 
 async function createcontactus(req, res) {
-    const contact = req.body;
+    const contacts = req.body;
 
-    const createdcontactus = await contactusService.createcontactus(contact);
+    const createdcontactus = await contactusService.createcontactus(contacts);
     res.status(201).json(createdcontactus);
 };
 

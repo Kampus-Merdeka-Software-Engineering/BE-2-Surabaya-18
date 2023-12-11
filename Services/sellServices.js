@@ -1,9 +1,9 @@
 const prisma = require ('../config/prisma');
 
-async function createcontactus (contacts) {
+async function createsell (selling) {
     try {
-        return await prisma.contact_us.create({
-            data: contacts,
+        return await prisma.sell.create({
+            data: selling,
         });
         } catch (error) {
         throw error;
@@ -11,5 +11,5 @@ async function createcontactus (contacts) {
 };
 
 module.exports = {
-    createcontactus,
+    createsell,
 };
