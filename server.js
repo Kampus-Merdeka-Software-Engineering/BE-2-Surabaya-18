@@ -1,20 +1,21 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const contactusRoutes = require("./Routes/contactusRoutes");
-const sellRoutes = require("./Routes/sellRoutes");
 
 const app = express();
+const router = express.Router();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended : true}));
+app.use(express.urlencoded({ extended: true }));
 
-app.use(contactusRoutes);
-app.use(sellRoutes);
+const menuRoutes = require('./Routes/menuRoutes')
 
 
-const PORT = 3300;
+app.use(router);
+app.use(menuRoutes);
+
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`);
-});
+    console.log(`listening on port ${PORT}`);
+})
