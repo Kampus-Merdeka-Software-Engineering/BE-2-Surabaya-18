@@ -1,15 +1,29 @@
-const prisma = require ('../config/prisma');
+const prisma = require("../config/prisma");
 
-async function createsell (selling) {
+
+async function menuInput(menud) {
+    console.log(menud)
     try {
-        return await prisma.sell.create({
-            data: selling,
+        return await prisma.menu.create({
+            data: menud,
         });
         } catch (error) {
         throw error;
     }   
 };
 
-module.exports = {
-    createsell,
+async function getAllmenu(){
+    try{
+        const menus = await prisma.menu.findMany();
+        return menus;
+    } catch (err){
+        throw err;
+    }
 };
+
+
+
+module.exports = {
+    getAllmenu,
+    menuInput
+}
