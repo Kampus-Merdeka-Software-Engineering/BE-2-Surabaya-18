@@ -7,20 +7,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Sell {
-  id                Int       @id @default(autoincrement())
-  Customer_name     String    @unique @db.VarChar(255)                        
-  Address           String    @db.VarChar(255)
-  Phone_Number      String    @db.VarChar(255)
-  Order             String    @db.VarChar(100)
-  Order_Quantity    Int
-}
-
-model Contact_us {
-  id                Int       @id @default(autoincrement())
-  Customer_name     String    @unique @db.VarChar(255)                        
-  Email             String    @db.VarChar(255)
-  Phone_Number      String    @db.VarChar(255)
-  Subject           String    @db.VarChar(100)
-  Message           String    @db.LongText
+model menu {
+  id             Int    @id @default(autoincrement())
+  Customer_name  String @db.VarChar(255)
+  Address        String @db.VarChar(255)
+  Phone_Number   String @db.VarChar(255)
+  Order          String @db.VarChar(100)
+  Order_Quantity Int
 }
